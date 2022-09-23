@@ -1,50 +1,78 @@
-<model-viewer id="Base" camera-controls touch-action="pan-y" src="Sectors\Base.glb" ar alt="External coordination agencies">
+<model-viewer id="Base" camera-controls touch-action="pan-y" src="Sectors/Base.glb" ar alt="External coordination agencies">
   <div class="controls">
-      <p>Sectors</p>
-      <select id="normals2">
-        <option>None</option>
-        <option value="Sectors\BaseWON.glb">Wonthaggi - WON - 135.3</option>
-        <option value="Sectors\BaseELW.glb">Eldon Weir - ELW - 123.75</option>
-        <option value="Sectors\BaseELWOVN.glb">Eldon Weir and Ovens</option>
-        <option value="Sectors\BaseOVN.glb">Ovens - OVN - 125.2</option>
+    <div>
+      <p>Wonthaggi</p>
+      <select id="Wonthaggi">
+        <option value="Sectors/BaseWON.glb">Wonthaggi</option>
       </select>
-      <p>Abbreviation</p>
-      <p id="texture-name">None</p>
-      <p>Frequency</p>
-      <p id="image-name">None</p>
     </div>
+    <div>
+      <p>Metallic-roughness</p>
+      <select id="metallicRoughness">
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_metalRoughness.jpg">Damaged helmet</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_roughnessMetallic.png">Lantern Pole</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_occlusionRoughnessMetallic.png">Water Bottle</option>
+      </select>
+    </div>
+    <div>
+      <p>Normals</p>
+      <select id="normals">
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_normal.jpg">Damaged helmet</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_normal.png">Lantern Pole</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_normal.png">Water Bottle</option>
+      </select>
+    </div>
+    <div>
+      <p>Occlusion</p>
+      <select id="occlusion">
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_AO.jpg">Damaged helmet</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_occlusionRoughnessMetallic.png">Water Bottle</option>
+      </select>
+    </div>
+    <div>
+      <p>Emission</p>
+      <select id="emission">
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_emissive.jpg">Damaged helmet</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_emissive.png">Lantern Pole</option>
+        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_emissive.png">Water Bottle</option>
+      </select>
+    </div>
+  </div>
 </model-viewer>
 <script type="module">
-const modelViewerTexture = document.querySelector("model-viewer#duck");
-const textureName = document.querySelector('#texture-name');
-const imageName = document.querySelector('#image-name');
+const modelViewerTexture1 = document.querySelector("model-viewer#helmet");
 
-modelViewerTexture.addEventListener("load", () => {
+modelViewerTexture1.addEventListener("load", () => {
 
-  const material = modelViewerTexture.model.materials[0];
+  const material = modelViewerTexture1.model.materials[0];
 
   const createAndApplyTexture = async (channel, event) => {
-    if (event.target.value == "None") {
-      // Clears the texture.
-      material[channel].setTexture(null);
-      // Display the names values
-      textureName.innerText = "None";
-      imageName.innerText = "None";
-    } else if (event.target.value) {
-      // Creates a new texture.
-      const texture = await modelViewerTexture.createTexture(event.target.value);
-      // Set the texture name
-      texture.name = event.target.options[event.target.selectedIndex].text.replace(/ /g, "_").toLowerCase();
-      // Applies the new texture to the specified channel.
+    const texture = await modelViewerTexture1.createTexture(event.target.value);
+    if (channel.includes('base') || channel.includes('metallic')) {
+      material.pbrMetallicRoughness[channel].setTexture(texture);
+    } else {
       material[channel].setTexture(texture);
-      // Display the names values
-      textureName.innerText = texture.name;
-      imageName.innerText = texture.source.name;
     }
   }
 
-  document.querySelector('#normals2').addEventListener('input', (event) => {
+  document.querySelector('#normals').addEventListener('input', (event) => {
     createAndApplyTexture('normalTexture', event);
+  });
+
+  document.querySelector('#occlusion').addEventListener('input', (event) => {
+    createAndApplyTexture('occlusionTexture', event);
+  });
+
+  document.querySelector('#emission').addEventListener('input', (event) => {
+    createAndApplyTexture('emissiveTexture', event);
+  });
+
+  document.querySelector('#diffuse').addEventListener('input', (event) => {
+    createAndApplyTexture('baseColorTexture', event);
+  });
+
+  document.querySelector('#metallicRoughness').addEventListener('input', (event) => {
+    createAndApplyTexture('metallicRoughnessTexture', event);
   });
 });
 
