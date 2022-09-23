@@ -23,14 +23,20 @@
         }
     </style>
 
-   <div class="slider">
-    <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, '50NM ESL')" style="background-image: src="../../Sectors/Base.glb" ios-src="../../Sectors/Base.usdz";">
-      </button><button class="slide" onclick="switchSrc(this, 'WON')" style="background-image: src="../../Sectors/BaseWON.glb" ios-src="../../Sectors/BaseWON.usdz";">
-      </button><button class="slide" onclick="switchSrc(this, 'ELW')" style="background-image: src="../../Sectors/BaseELW.glb" ios-src="../../Sectors/BaseELW.usdz";">
-      </button><button class="slide" onclick="switchSrc(this, 'OVN')" style="background-image: src="../../Sectors/BaseOVN.glb" ios-src="../../Sectors/BaseOVN.usdz";">
-    </button></div>
-  </div>
-  
+    <model-viewer id= "Sectors" src="../../Sectors/Base.glb" ios-src="../../Sectors/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
+    <div id="controls">
+        <button onclick="myFunction()">Toggle View</button>
+    </div>
+    </model-viewer>
+
+    <script>
+        const models = ['Base' , 'BaseWON' , 'BaseELW' , 'BaseOVN']
+        const modelViewer = document.querySelector('#Sectors');
+        let j = 0;
+        function myFunction() {
+            modelViewer.setAttribute('src' , `../../Sectors/${models[j++ % 4]}.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/${models[j]}.usdz`);
+        }
+    </script>
 </body>
 </html>
