@@ -1,42 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>External coordination agencies</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
 </head>
 <body>
-    <style>
-        model-viewer{
-            width: auto;
-            height: 600px;
-            margin: 0 auto;
-        }
-        #controls {
-            position: absolute;
-            bottom: 16px;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%)
-        }
-    </style>
 
-    <model-viewer id= "Sectors" src="../../Sectors/Base.glb" ios-src="../../Sectors/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
-    <div id="controls">
-        <button onclick="myFunction()">Toggle View</button>
-    </div>
-    </model-viewer>
+<h2>East Sale external coordination agencies</h2>
+<p>Select an agency from the drop-down list.</p>
 
-    <script>
-        const models = ['Base' , 'BaseWON' , 'BaseELW' , 'BaseOVN']
-        const modelViewer = document.querySelector('#Sectors');
-        let j = 0;
-        function myFunction() {
-            modelViewer.setAttribute('src' , `../../Sectors/${models[j++ % 4]}.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Sectors/${models[j]}.usdz`);
-        }
-    </script>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+      
+      <a href="#">50NM ESL</a>
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer alt="50NM ESL" src="Sectors/Base.glb" ios-src="Sectors/Base.usdz" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      
+    <a href="#">WON</a>
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer alt="WON" src="Sectors/BaseWON.glb" ios-src="Sectors/BaseWON.usdz" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      
+      
+      
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
 </body>
 </html>
