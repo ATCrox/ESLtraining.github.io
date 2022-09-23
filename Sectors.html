@@ -1,12 +1,36 @@
-<model-viewer id="Base" camera-controls touch-action="pan-y" src=".../.../Sectors/Base.glb" ar alt="External coordinating agencies">
-  <div class="controls">
-      <p>Sectors</p>
-      <select id="normals2">
-        <option>None</option>
-        <option value="../../Sectors/BaseWON.glb">Wonthaggi</option>
-        <option value="../../Sectors/BaseELW.glb">Eldon Weir</option>
-        <option value="../../Sectors/Base.OVN.glb">Ovens</option>
-      </select>
-    </div>
-</model-viewer>
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External coordination agencies</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <style>
+        model-viewer{
+            width: auto;
+            height: 600px;
+            margin: 0 auto;
+        }
+        #controls {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
+        }
+    </style>
+
+   <div class="slider">
+    <div class="slides">
+      <button class="slide selected" onclick="switchSrc(this, '50NM ESL')" style="background-image: src="../../Sectors/Base.glb" ios-src="../../Sectors/Base.usdz";">
+      </button><button class="slide" onclick="switchSrc(this, 'WON')" style="background-image: src="../../Sectors/BaseWON.glb" ios-src="../../Sectors/BaseWON.usdz";">
+      </button><button class="slide" onclick="switchSrc(this, 'ELW')" style="background-image: src="../../Sectors/BaseELW.glb" ios-src="../../Sectors/BaseELW.usdz";">
+      </button><button class="slide" onclick="switchSrc(this, 'OVN')" style="background-image: src="../../Sectors/BaseOVN.glb" ios-src="../../Sectors/BaseOVN.usdz";">
+    </button></div>
+  </div>
+  
+</body>
+</html>
