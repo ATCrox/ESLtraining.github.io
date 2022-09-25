@@ -1,6 +1,6 @@
 # ESL Training
  
-Click the links below to project East Sale airspace into augmented reality:
+Words etc.:
 <ul>
  <li>R359A-G <a href="https://atcrox.github.io/ESLtraining.github.io/R359">Link 1</a></li>
  
