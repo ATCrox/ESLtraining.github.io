@@ -25,45 +25,25 @@
 
     <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
     
-    <div id="controls">
-        <button onclick="Basef">No sectors</button>
-                <div style = "position:relative; left:-10px; bottom:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="MITf">MIT</button>
-                <div style = "position:relative; left:0px; bottom:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="WONf">WON</button>
-                <div style = "position:relative; left:10px; bottom:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="DOKf">DOK</button>
-                <div style = "position:relative; left:20px; top:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="ELWf">ELW</button>
-                <div style = "position:relative; left:30px; top:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="OVNf">OVN</button>
-                <div style = "position:relative; left:40px; top:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="SNOf">SNO</button>
-                <div style = "position:relative; left:50px; top:5px;">
-        </div>
-    <div id="controls">
-        <button onclick="HUOf">HUO</button>
-                <div style = "position:relative; left:60px; top:5px;">
-        </div>
+<div class="btn-group" style="width:100%">
+  <div id="controls" button onclick="Nonef"> <button style="width:12.5%">No sector</button>
+  <div id="controls" button onclick="MITf" <button style="width:12.5%">MIT</button>
+  <div id="controls" button onclick="WONf" <button style="width:12.5%">WON</button>
+  <div id="controls" button onclick="DOKf" <button style="width:12.5%">DOK</button>
+  <div id="controls" button onclick="ELWf" <button style="width:12.5%">ELW</button>
+  <div id="controls" button onclick="OVNf" <button style="width:12.5%">OVN</button>
+  <div id="controls" button onclick="SNOf" <button style="width:12.5%">SNO</button>
+  <div id="controls" button onclick="HUOf" <button style="width:12.5%">HUO</button>
+</div>
+
     </model-viewer>
         
     <script>
         const modelViewer = document.querySelector('#Sectors');
-        function Basef {
+        function Nonef {
             modelViewer.setAttribute('src' , `../../Airspace/Base.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/Base.usdz`)
+        }
     </script>      
         
     <script>
@@ -71,6 +51,7 @@
         function MITf {
             modelViewer.setAttribute('src' , `../../Airspace/MIT.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/MIT.usdz`)
+        }
     </script>      
     
     <script>
@@ -78,6 +59,7 @@
         function WONf {
             modelViewer.setAttribute('src' , `../../Airspace/WON.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/WON.usdz`);
+        }
     </script>    
     
     <script>
@@ -85,6 +67,7 @@
         function DOKf {
             modelViewer.setAttribute('src' , `../../Airspace/DOK.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/DOK.usdz`);
+        }
     </script>
         
     <script>
@@ -92,6 +75,7 @@
         function ELWf {
             modelViewer.setAttribute('src' , `../../Airspace/ELW.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/ELW.usdz`);
+        }
     </script>
         
     <script>
@@ -99,6 +83,7 @@
         function OVNf {
             modelViewer.setAttribute('src' , `../../Airspace/OVN.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/OVN.usdz`);
+        }
     </script>
         
     <script>
@@ -106,6 +91,7 @@
         function SNOf {
             modelViewer.setAttribute('src' , `../../Airspace/SNO.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/SNO.usdz`);
+        }
     </script>
         
     <script>
@@ -113,6 +99,7 @@
         function HUOf {
             modelViewer.setAttribute('src' , `../../Airspace/HUO.glb`);
             modelViewer.setAttribute('ios-src' , `../../Airspace/HUO.usdz`);
+        }
     </script>
 </body>
 </html>
