@@ -23,20 +23,78 @@
         }
     </style>
 
-    <model-viewer id= "Sectors" src="Sectors/1.glb" ios-src="Sectors/1.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
+    <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
+    
     <div id="controls">
-        <button onclick="myFunction()">Toggle View</button>
-    </div>
+        <button onclick="MITf">MIT</button>
+        </div>
+    <div id="controls">
+        <button onclick="WONf">WON</button>
+        </div>
+    <div id="controls">
+        <button onclick="DOKf">DOK</button>
+        </div>
+    <div id="controls">
+        <button onclick="ELWf">ELW</button>
+        </div>
+    <div id="controls">
+        <button onclick="OVNf">OVN</button>
+        </div>
+    <div id="controls">
+        <button onclick="SNOf">SNO</button>
+        </div>
+    <div id="controls">
+        <button onclick="HUOf">HUO</button>
+        </div>
     </model-viewer>
-
+        
     <script>
-        const models = ['1' , '2' , '3' , '4' ]
         const modelViewer = document.querySelector('#Sectors');
-        let j = 0;
-        function myFunction() {
-            modelViewer.setAttribute('src' , `../../Sectors/${models[j++ % 4]}.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Sectors/${models[j]}.usdz`);
-        }
+        function MITf {
+            modelViewer.setAttribute('src' , `../../Sectors/MIT.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/MIT.usdz`)
+    </script>      
+    
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function WONf {
+            modelViewer.setAttribute('src' , `../../Sectors/WON.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/WON.usdz`);
+    </script>    
+    
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function DOKf {
+            modelViewer.setAttribute('src' , `../../Sectors/DOK.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/DOK.usdz`);
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function ELWf {
+            modelViewer.setAttribute('src' , `../../Sectors/ELW.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/ELW.usdz`);
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function OVNf {
+            modelViewer.setAttribute('src' , `../../Sectors/OVN.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/OVN.usdz`);
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function SNOf {
+            modelViewer.setAttribute('src' , `../../Sectors/SNO.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/SNO.usdz`);
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function HUOf {
+            modelViewer.setAttribute('src' , `../../Sectors/HUO.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Sectors/HUO.usdz`);
     </script>
 </body>
 </html>
