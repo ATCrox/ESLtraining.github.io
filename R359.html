@@ -32,7 +32,7 @@
     <script>
         const models = ['1' , '2' , '3' , '4']
         const modelViewer = document.querySelector('#Sectors');
-        let j = 0;
+        let j = 1;
         function myFunction() {
             modelViewer.setAttribute('src' , `../../Sectors/${models[j++ % 4]}.glb`);
             modelViewer.setAttribute('ios-src' , `../../Sectors/${models[j]}.usdz`);
