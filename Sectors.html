@@ -26,6 +26,10 @@
     <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
     
     <div id="controls">
+        <button onclick="Basef">No sectors</button>
+                <div style = "position:relative; left:-10px; bottom:5px;">
+        </div>
+    <div id="controls">
         <button onclick="MITf">MIT</button>
                 <div style = "position:relative; left:0px; bottom:5px;">
         </div>
@@ -54,6 +58,13 @@
                 <div style = "position:relative; left:60px; top:5px;">
         </div>
     </model-viewer>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Basef {
+            modelViewer.setAttribute('src' , `../../Airspace/Base.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/Base.usdz`)
+    </script>      
         
     <script>
         const modelViewer = document.querySelector('#Sectors');
