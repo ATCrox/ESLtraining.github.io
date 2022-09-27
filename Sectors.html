@@ -24,17 +24,24 @@
     </style>
 
     <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
-    
+
+<div class="dropdown">
+  <button class="dropbtn">Sectors</button>
+  <div class="dropdown-content">
+  <a onclick="Nonef">No sector</a>
+  <a onclick="MITf">MIT</a>
+  <a onclick="WONf">WON</a>
+  <a onclick="DOKf">DOK</a>
+  <a onclick="ELWf">ELW</a>
+  <a onclick="OVNf">OVN</a>
+  <a onclick="SNOf">SNO</a>
+  <a onclick="HUOf">HUO</a>
+  <a onclick="https://atcrox.github.io/ESLtraining.github.io/R359">R359</a>
+  </div>
+</div>    
+        
 <div class="btn-group" style="width:100%">
-  <button button onclick="Nonef" button style="width:10%">No sector</button>
-  <button button onclick="MITf" button style="width:10%">MIT</button>
-  <button button onclick="WONf" button style="width:10%">WON</button>
-  <button button onclick="DOKf" button style="width:10%">DOK</button>
-  <button button onclick="ELWf" button style="width:10%">ELW</button>
-  <button button onclick="OVNf" button style="width:10%">OVN</button>
-  <button button onclick="SNOf" button style="width:10%">SNO</button>
-  <button button onclick="HUOf" button style="width:10%">HUO</button>
-  <button button onclick="https://atcrox.github.io/ESLtraining.github.io/R359" button style="width:10%">R359</button>
+
 </div>
 
     </model-viewer>
