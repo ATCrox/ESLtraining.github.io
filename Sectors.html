@@ -4,117 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>External coordination agencies</title>
+    <title>Model Viewer</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
-<body>
     <style>
         model-viewer{
             width: auto;
             height: 600px;
             margin: 0 auto;
         }
+
         #controls {
             position: absolute;
             bottom: 16px;
             left: 50%;
+            max-width: unset;
             -webkit-transform: translateX(-50%);
-            transform: translateX(-50%)
+            transform: translateX(-50%);
+            pointer-events: auto;
+        }
+
+        .box{
+            background: rgb(200, 200, 200);
+            border-radius: 4px;
+            border: none;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            color: rgba(0, 0, 0, 0.8);
+            display: block;
+            font-family: Futura, Helvetica Neue, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            max-width: 128px;
+            overflow-wrap: break-word;
+            padding: 0.5em 1em;
+            position: absolute;
+            width: max-content;
+            height: max-content;
+            pointer-events: none;
         }
     </style>
-
-    <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
-
-<div class="btn-group" style="width:100%">
-  <button button onclick="Nonef" button style="width:10%">No sector</button>
-  <button button onclick="MITf" button style="width:10%">MIT</button>
-  <button button onclick="WONf" button style="width:10%">WON</button>
-  <button button onclick="DOKf" button style="width:10%">DOK</button>
-  <button button onclick="ELWf" button style="width:10%">ELW</button>
-  <button button onclick="OVNf" button style="width:10%">OVN</button>
-  <button button onclick="SNOf" button style="width:10%">SNO</button>
-  <button button onclick="HUOf" button style="width:10%">HUO</button>
-  <button button onclick="R359" button style="width:10%">R359</button>
-</div>
+</head>
+<body>
+    <model-viewer id="selection-demo" ar camera-controls src="../../Airspace/Base.glb" ios-src="../../Airspace/Base.usdz">
+    
+        <div id="controls" class="box">
+            <label for="each">Product:</label>
+            <select id="srcVal">
+            <option value="Base">Base Map</option>
+            <option value="MIT">MIT</option>
+            <option value="WON">WON</option>
+            <option value="DOK">DOK</option>
+            <option value="ELW">ELW</option>
+            <option value="OVN">OVN</option>
+            <option value="SNO">SNO</option>
+            <option value="HUO">HUO</option>
+            <option value="R359A">R359A</option>
+            </select>
+        </div>
 
     </model-viewer>
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function Nonef {
-            modelViewer.setAttribute('src' , `../../Airspace/Base.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/Base.usdz`);
-        display "50NM radius of East Sale"
-        }
-    </script>      
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function MITf {
-            modelViewer.setAttribute('src' , `../../Airspace/MIT.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/MIT.usdz`)
-            display "MIT - Mitchell - 123.35"
-        }
-    </script>      
-    
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function WONf {
-            modelViewer.setAttribute('src' , `../../Airspace/WON.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/WON.usdz`);
-            display "WON - Wonthaggi - 135.3"
-        }
-    </script>    
-    
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function DOKf {
-            modelViewer.setAttribute('src' , `../../Airspace/DOK.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/DOK.usdz`);
-            display "DOK - Dookie - 122.4"
-        }
-    </script>
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function ELWf {
-            modelViewer.setAttribute('src' , `../../Airspace/ELW.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/ELW.usdz`);
-            display "ELW - Eldon Weir - 123.75"
-        }
-    </script>
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function OVNf {
-            modelViewer.setAttribute('src' , `../../Airspace/OVN.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/OVN.usdz`);
-            display "OVN - Ovens - 125.2"
-        }
-    </script>
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function SNOf {
-            modelViewer.setAttribute('src' , `../../Airspace/SNO.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/SNO.usdz`);
-            display "SNO - Snowy - 120.75 and 124.0"
-        }
-    </script>
-        
-    <script>
-        const modelViewer = document.querySelector('#Sectors');
-        function HUOf {
-            modelViewer.setAttribute('src' , `../../Airspace/HUO.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Airspace/HUO.usdz`);
-            display "HUO - Huon - 130.3"
-        }
-    </script>
-    
-        <script>
-        function R359 {
-            <a href="https://atcrox.github.io/ESLtraining.github.io/R359">
-        }
+
+    <script type="module">
+        const modelViewer = document.querySelector('#selection-demo');
+      
+        modelViewer.querySelector('#srcVal').addEventListener('input', (event) => {
+          modelViewer.setAttribute('src' , `../../Airspace/${event.target.value}.glb`);
+          modelViewer.setAttribute('ios-src' , `../../Airspace/${event.target.value}.usdz`);
+        });
     </script>
 </body>
 </html>
