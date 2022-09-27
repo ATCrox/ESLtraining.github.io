@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>External coordination agencies</title>
+    <title>R359A-G</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -23,19 +23,107 @@
         }
     </style>
 
-    <model-viewer id= "Sectors" src="../../Sectors/1.glb" ios-src="../../Sectors/1.usdz" alt="External coordination agencies" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
-    <div id="controls">
-        <button onclick="myFunction()">Toggle View</button>
-    </div>
-    </model-viewer>
+    <model-viewer id= "Sectors" src="Airspace/Base.glb" ios-src="Airspace/Base.usdz" alt="R359A-G" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" shadow-intensity="1" camera-controls>
 
+<div class="btn-group" style="width:100%">
+  <button button onclick="Nonef" button style="width:10%">No airspace</button>
+  <button button onclick="Af" button style="width:10%">R359A</button>
+  <button button onclick="Bf" button style="width:10%">R359B</button>
+  <button button onclick="Cf" button style="width:10%">R359C</button>
+  <button button onclick="Df" button style="width:10%">R359D</button>
+  <button button onclick="Ef" button style="width:10%">R359E</button>
+  <button button onclick="Ff" button style="width:10%">R359F</button>
+  <button button onclick="Gf" button style="width:10%">R359G</button>
+  <button button onclick="Allf" button style="width:10%">All</button>
+  <button button onclick="Sectorsf" button style="width:10%">Sectors</button>
+</div>
+
+    </model-viewer>
+        
     <script>
-        const models = ['1' , '2' , '3' , '4']
         const modelViewer = document.querySelector('#Sectors');
-        let j = 1;
-        function myFunction() {
-            modelViewer.setAttribute('src' , `../../Sectors/${models[j++ % 4]}.glb`);
-            modelViewer.setAttribute('ios-src' , `../../Sectors/${models[j]}.usdz`);
+        function Nonef {
+            modelViewer.setAttribute('src' , `../../Airspace/Base.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/Base.usdz`);
+        display "50NM radius of East Sale"
+        }
+    </script>      
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Af {
+            modelViewer.setAttribute('src' , `../../Airspace/R359A.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359A.usdz`)
+            display "R359 details"
+        }
+    </script>      
+    
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Bf {
+            modelViewer.setAttribute('src' , `../../Airspace/R359B.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359B.usdz`);
+            display "R359B details"
+        }
+    </script>    
+    
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Cf {
+            modelViewer.setAttribute('src' , `../../Airspace/R359C.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359C.usdz`);
+            display "R359C details"
+        }
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Df {
+            modelViewer.setAttribute('src' , `../../Airspace/R359D.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359D.usdz`);
+            display "R359D details"
+        }
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Ef {
+            modelViewer.setAttribute('src' , `../../Airspace/R359E.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359E.usdz`);
+            display "R359E details"
+        }
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Ff {
+            modelViewer.setAttribute('src' , `../../Airspace/R359F.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359F.usdz`);
+            display "R359F details"
+        }
+    </script>
+        
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Gf {
+            modelViewer.setAttribute('src' , `../../Airspace/R359G.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359G.usdz`);
+            display "R359G details"
+        }
+    </script>
+    
+    <script>
+        const modelViewer = document.querySelector('#Sectors');
+        function Allf {
+            modelViewer.setAttribute('src' , `../../Airspace/R359All.glb`);
+            modelViewer.setAttribute('ios-src' , `../../Airspace/R359All.usdz`);
+            display "R359A-G details"
+        }
+    </script>
+    
+        <script>
+        function Sectorsf {
+            <a href="https://atcrox.github.io/ESLtraining.github.io/Sectors">
         }
     </script>
 </body>
