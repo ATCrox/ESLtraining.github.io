@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Viewer</title>
+    <title>External coordination agencies</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         model-viewer{
@@ -13,16 +13,26 @@
             margin: 0 auto;
         }
 
-        #controls {
+        #controls1 {
             position: absolute;
             bottom: 16px;
-            left: 50%;
+            left: 25%;
             max-width: unset;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
             pointer-events: auto;
         }
-
+        #controls2 {
+            position: absolute;
+            bottom: 16px;
+            left: 75%;
+            max-width: unset;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            pointer-events: auto;
+        }
+        
+        
         .box{
             background: rgb(200, 200, 200);
             border-radius: 4px;
@@ -48,10 +58,10 @@
     
 <model-viewer id="selection-demo" ar camera-controls src="Airspace/Base.glb" ios-src="Airspace/Base.usdz">
     
-        <div id="controls" class="box">
-            <label for="each">Product:</label>
+        <div id="controls1" class="box">
+            <label for="each">Sector:</label>
             <select id="srcVal">
-            <option value="Base">Base Map</option>
+            <option value="Base">No sector</option>
             <option value="MIT">MIT</option>
             <option value="WON">WON</option>
             <option value="DOK">DOK</option>
@@ -59,8 +69,13 @@
             <option value="OVN">OVN</option>
             <option value="SNO">SNO</option>
             <option value="HUO">HUO</option>
-            <option value="R359A">R359A</option>
             </select>
+        </div>
+    
+        <div id="constrols2" class="box">
+            <form action="https://atcrox.github.io/ESLtraining.github.io/R359">
+            <input type="submit" value="R359"/>
+            </form>
         </div>
 
     </model-viewer>
