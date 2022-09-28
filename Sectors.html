@@ -13,25 +13,15 @@
             margin: 0 auto;
         }
 
-        #controls1 {
+        #controls {
             position: absolute;
             bottom: 16px;
-            left: 25%;
+            left: 50%;
             max-width: unset;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
             pointer-events: auto;
         }
-        #controls2 {
-            position: absolute;
-            bottom: 16px;
-            left: 75%;
-            max-width: unset;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-            pointer-events: auto;
-        }
-        
         
         .box{
             background: rgb(200, 200, 200);
@@ -58,7 +48,7 @@
     
 <model-viewer id="selection-demo" ar camera-controls src="Airspace/Base.glb" ios-src="Airspace/Base.usdz">
     
-        <div id="controls1" class="box">
+        <div id="controls" class="box">
             <label for="each">Sector:</label>
             <select id="srcVal">
             <option value="Base">No sector</option>
@@ -70,11 +60,6 @@
             <option value="SNO">SNO</option>
             <option value="HUO">HUO</option>
             </select>
-        </div>
-    
-        <div id="constrols2" class="box">
-            <button class="box" action="https://atcrox.github.io/ESLtraining.github.io/R359">R359
-            </button>
         </div>
 
     </model-viewer>
